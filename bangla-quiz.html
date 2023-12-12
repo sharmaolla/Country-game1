@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <!--<script src="js/main.js" defer></script>-->
+    <title>Country Game</title>
+</head>
+
+<body>
+<div class="container">
+    <header class="page-header">
+        <h1 class="page-title">Country Game</h1>
+        <nav>
+            <ul class="flex-wrap space-evenly">
+                <li>
+                    <a  class="button button-green" href="about.html">Rules</a>
+                </li>
+                <li>
+                    <a class="button button-green" href="hiden.html">Main</a>
+                </li>
+                <li>
+                    <a class="button button-green" href="last.html">Quit</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-wrap">
+        <div id="pic">
+            <img class="responsive-img" src="img/bangladesh1.jpg" alt="Globe">
+        </div>
+        <div class="boxes">
+
+            <section class="box">
+                <header>
+                    <h2>Quiz about Bangladesh.</h2>
+                </header>
+                <style>
+                    #test div {
+                        margin-bottom: 30px;
+                    }
+                    .correct {
+                        border: 5px solid green;
+                    }
+                    .incorrect {
+                        border: 5px solid red;
+                    }
+                </style>
+
+                <div id="test">
+                    <div>
+                        <p>What is the capital of Bangladesh?</p>
+                        <p><b>1.</b>Kandy   <b>2.</b>Dhaka  <b>3.</b>Bogura   <b>4.</b>Beijing</p>
+                        <input>
+                    </div>
+                    <div>
+                         <p>What is official language in Bangladesh?</p>
+                         <p><b>1.</b>Spanish   <b>2.</b>Chinese   <b>3.</b>Tamil   <b>4.</b>Bengali   </p>
+                         <input>
+                    </div>
+                    <div>
+                        <p>What is the name of the currency used in Bangladesh?</p>
+                        <p><b>1.</b>Rupees   <b>2.</b>Bangladeshi Taka  <b>3.</b>Yen  <b>4.</b>Euros</p>
+                        <input>
+                    </div>
+                    <div>
+                        <p>What is Bangladesh famous for?</p>
+                        <p><b>1.</b>Cinnamon    <b>2.</b>Volcanos  <b>3.</b>Bengal tigers   <b>4.</b>Statue of Liberty</p>
+                       <input>
+                   </div>
+                   <button id="button">check</button>
+                      <a href="bangla-quiz.html">Try again</a>
+                </div>
+
+
+                <script>
+                    let button = document.querySelector('#button');
+                    let rightAnswers = [2, 4, 2, 2];
+                    button.addEventListener('click', function() {
+                        let inputs = document.querySelectorAll('#test input');
+
+                        let  i = 0;
+                        for (let input of inputs) {
+                            if (input.value == rightAnswers[i]) {
+                                input.classList.add('correct');
+                            } else {
+                                input.classList.add('incorrect');
+                            }
+                            i++;
+                        }
+                    });
+                </script>
+
+            </section>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <p>2023 | Finland</p>
+    </footer>

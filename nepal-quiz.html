@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <!--<script src="js/main.js" defer></script>-->
+    <title>Country Game</title>
+</head>
+
+<body>
+<div class="container">
+    <header class="page-header">
+        <h1 class="page-title">Country Game</h1>
+        <nav>
+            <ul class="flex-wrap space-evenly">
+                <li>
+                    <a  class="button button-green" href="about.html">Rules</a>
+                </li>
+                <li>
+                    <a class="button button-green" href="hiden.html">Main</a>
+                </li>
+                <li>
+                    <a class="button button-green" href="last.html">Quit</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-wrap">
+        <div id="pic">
+            <img class="responsive-img" src="img/nepal.jpg" alt="Globe">
+        </div>
+        <div class="boxes">
+
+            <section class="box">
+                <header>
+                    <h2>Quiz about Nepal.</h2>
+                </header>
+                <style>
+                    #test div {
+                        margin-bottom: 30px;
+                    }
+                    .correct {
+                        border: 5px solid green;
+                    }
+                    .incorrect {
+                        border: 5px solid red;
+                    }
+                </style>
+
+                <div id="test">
+                    <div>
+                        <p>What is the capital of Nepal?</p>
+                        <p><b>1.</b>Kathmandu   <b>2.</b>Cat-mandu   <b>3.</b>Moscow   <b>4.</b>Helsinki</p>
+                        <input data-right="1">
+                    </div>
+                    <div>
+                         <p>What is official language in Nepal?</p>
+                         <p><b>1.</b>I forgot   <b>2.</b>Chinese   <b>3.</b>Nepali   <b>4.</b>Nep-language   </p>
+                         <input data-right="3">
+                    </div>
+                    <div>
+                        <p>What is the name of the currency used in Nepal?</p>
+                        <p><b>1.</b>Nepalese ruble   <b>2.</b>Nepalese rupee   <b>3.</b>Indian rupee   <b>4.</b>You can use any</p>
+                        <input data-right="2">
+                    </div>
+                    <div>
+                        <p>What is Nepal famous for?</p>
+                        <p><b>1.</b>Panda bears    <b>2.</b>Fomula-1   <b>3.</b>Indian Ocean   <b>4.</b>Beautiful mountains</p>
+                       <input data-right="4">
+                   </div>
+                   <button id="button">check</button>
+                    <a href="nepal-quiz.html">Try again</a>
+                </div>
+
+
+                <script>
+                    let button = document.querySelector('#button');
+                    let rightAnswers = [1, 3, 2, 4];
+                    button.addEventListener('click', function() {
+                        let inputs = document.querySelectorAll('#test input');
+
+                        for (let input of inputs) {
+                            if (input.value == input.dataset.right) {
+                                input.classList.add('correct');
+                            } else {
+                                input.classList.add('incorrect');
+                            }
+
+                        }
+                    });
+                </script>
+
+            </section>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <p>2023 | Finland</p>
+    </footer>
